@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: zipcrack-bot
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt && chmod +x zip-password-finder"
+    startCommand: "python app.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
